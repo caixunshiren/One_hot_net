@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d757bfa0-1b01-430f-99c0-98a98f1db4e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Text_cryptography.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Letter Crypotography Softmax.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Letter Crypotography Softmax.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Letter Crypotography.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Letter Crypotography.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Letter Crypotography Softmax Crossbar Sim-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Letter Crypotography Softmax Crossbar Sim-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Letter Crypotography Softmax Crossbar Sim.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Letter Crypotography Softmax Crossbar Sim.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text_cryptography.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text_cryptography.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
