@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d757bfa0-1b01-430f-99c0-98a98f1db4e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Letter Crypotography Softmax Crossbar Sim-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Letter Crypotography Softmax Crossbar Sim-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Letter Crypotography Softmax Crossbar Sim.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Letter Crypotography Softmax Crossbar Sim.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PUF_application_CIFAR10.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/PUF_application_CIFAR10.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text_cryptography.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text_cryptography.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

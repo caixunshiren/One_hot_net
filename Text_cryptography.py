@@ -113,8 +113,8 @@ class One_hot_net(nn.Module):
         self.tail = nn.Linear(feature_len, n_class)
         self.output = nn.LogSoftmax(dim=1)
 
-    def forward(self, X):
-        X = self.f_encoder.apply_wnoise(X, noise)
+    def forward(self, X, sd):
+        X = self.f_encoder.apply_wnoise(X, sd)
         X = torch.transpose(X, 0, 1)
         X = self.tail(X)
         # print(X.shape)
@@ -165,11 +165,11 @@ def visualize(message, model, secret_key, n):
     plt.show()
 
 class encryption_model():
-    def __init__(self, model_name, secret_key, cryoto_params, crossbar_params):
+    def __init__(self, model_name, secret_key, crypto_params, crossbar_params):
         #initialization
         self.name = model_name
         self.secret_key = secret_key
-        self.crypto_params = cryoto_params
+        self.crypto_params = crypto_params
         self.crossbar_params = crossbar_params
         self.model = None
         self.optimizer = None
@@ -179,6 +179,7 @@ class encryption_model():
         classes = self.crypto_params['classes']
         skdim = self.crypto_params['skdim']
         dim_multiplier = self.crypto_params['dim_multiplier']
+        sd = self.crossbar_params['viability']
 
         parameters = {
             'in_dim': skdim,
@@ -207,11 +208,11 @@ class encryption_model():
         test_loader = []
         for i in range(n_batch):
             # train
-            indices = make_data(batch_size_train)
+            indices = make_data(batch_size_train, classes)
             train_loader.append((secret_key[:, indices], indices))
 
             # test
-            indices = make_data(batch_size_train)
+            indices = make_data(batch_size_train,classes)
             test_loader.append((secret_key[:, indices], indices))
         print(train_loader[0][0].shape, train_loader[0][1].shape, train_loader[0][1])
         train_losses = []
@@ -224,7 +225,7 @@ class encryption_model():
                 data = data_set[0].to(device)
                 labels = data_set[1].to(device)
                 optimizer.zero_grad()
-                output = model(data)
+                output = model(data, sd)
                 # print(output.shape, output)
                 loss = F.nll_loss(output, labels)
                 loss.backward()
@@ -243,7 +244,7 @@ class encryption_model():
                 for data_set in test_loader:
                     data = data_set[0].to(device)
                     labels = data_set[1].to(device)
-                    output = model(data)
+                    output = model(data, sd)
                     test_loss += F.nll_loss(output, labels).item()
             test_loss /= len(test_loader)
             test_losses.append(float(test_loss))
@@ -271,7 +272,7 @@ class encryption_model():
         secret_key = self.secret_key
         noise = noise if noise is not None else self.crypto_params['noise']
         model1 = self.model
-        encrypted_message = encrypt(message, model1, secret_key, n=0.4)
+        encrypted_message = encrypt(message, model1, secret_key, n=noise)
         decrypted_m = decrypt(encrypted_message, model1, secret_key)
         acc = decryption_accuracy(message, decrypted_m)
         print("decryption accuracy is {}%".format(round(acc, 2)))
